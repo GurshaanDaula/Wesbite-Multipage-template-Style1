@@ -17,25 +17,33 @@
                             <h1>Build polished multi-page websites faster.</h1>
                             <p>
                                 A clean EJS and Express starter with reusable partials, modern styling,
-                                and a footer that stays at the bottom of the page.
+                                and placeholder authentication ready for future database integration.
                             </p>
 
                             <div class="hero-actions">
                                 <a href="/page2" class="btn btn-primary">Explore Pages</a>
-                                <a href="/page3" class="btn btn-secondary">View Layout</a>
+                                <a href="/login" class="btn btn-secondary">Open Login</a>
                             </div>
                         </div>
 
                         <div class="hero-card">
                             <div class="stat-card">
-                                <h3>Reusable Pages</h3>
-                                <p>Use this as a base for portfolios, business sites, dashboards, or class projects.</p>
+                                <% if (user) { %>
+                                    <h3>Logged In</h3>
+                                    <p>You are currently logged in as <strong>
+                                            <%= user.email %>
+                                        </strong>.</p>
+                                    <% } else { %>
+                                        <h3>Authentication Ready</h3>
+                                        <p>This starter now includes a placeholder login page and fake session flow.</p>
+                                        <% } %>
                             </div>
+
                             <div class="mini-grid">
                                 <div class="mini-box">Modern UI</div>
                                 <div class="mini-box">Sticky Footer</div>
                                 <div class="mini-box">Shared Partials</div>
-                                <div class="mini-box">Easy to Expand</div>
+                                <div class="mini-box">Login Placeholder</div>
                             </div>
                         </div>
                     </div>
@@ -64,8 +72,8 @@
                             </article>
 
                             <article class="card">
-                                <h3>Assignment Friendly</h3>
-                                <p>Simple structure that is easy to explain, edit, and submit later.</p>
+                                <h3>Auth Placeholder Included</h3>
+                                <p>Add your real database logic later without changing the design structure.</p>
                             </article>
                         </div>
                     </div>

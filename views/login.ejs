@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <%- include("partials/header") %>
+
+            <main class="main-content">
+                <section class="inner-page">
+                    <div class="container narrow">
+                        <span class="eyebrow">Authentication</span>
+                        <h1>Login</h1>
+                        <p class="lead">
+                            This is a placeholder login page. Later, this form can connect to your real database and
+                            session system.
+                        </p>
+
+                        <div class="login-layout">
+                            <div class="content-panel">
+                                <h3>Login Form</h3>
+
+                                <% if (errorMessage) { %>
+                                    <div class="form-alert">
+                                        <%= errorMessage %>
+                                    </div>
+                                    <% } %>
+
+                                        <form action="/login" method="POST" class="login-form">
+                                            <div class="form-group">
+                                                <label for="email">Email Address</label>
+                                                <input type="email" id="email" name="email"
+                                                    placeholder="Enter your email" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" name="password"
+                                                    placeholder="Enter your password" required>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary full-width">Login</button>
+                                        </form>
+                            </div>
+
+                            <div class="content-panel">
+                                <h3>Developer Placeholders</h3>
+                                <p>
+                                    This template currently uses fake login logic only.
+                                </p>
+
+                                <div class="placeholder-list">
+                                    <div class="placeholder-item">
+                                        <strong>Database check:</strong>
+                                        <span>app.post("/login")</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>DB credentials:</strong>
+                                        <span>config/db.js</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>Session storage:</strong>
+                                        <span>inside app.js where session comments are placed</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>User record:</strong>
+                                        <span>replace fakeLoggedInUser with real session user</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <%- include("partials/footer") %>
+    </div>
+</body>
+
+</html>

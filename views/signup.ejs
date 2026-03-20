@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <%- include("partials/header") %>
+
+            <main class="main-content">
+                <section class="inner-page">
+                    <div class="container narrow">
+                        <span class="eyebrow">Authentication</span>
+                        <h1>Create Account</h1>
+                        <p class="lead">
+                            This is a placeholder sign up page. Later, this can save users to your real database.
+                        </p>
+
+                        <div class="login-layout">
+                            <div class="content-panel">
+                                <h3>Sign Up Form</h3>
+
+                                <% if (errorMessage) { %>
+                                    <div class="form-alert">
+                                        <%= errorMessage %>
+                                    </div>
+                                    <% } %>
+
+                                        <% if (successMessage) { %>
+                                            <div class="form-success">
+                                                <%= successMessage %>
+                                            </div>
+                                            <% } %>
+
+                                                <form action="/signup" method="POST" class="login-form">
+                                                    <div class="form-group">
+                                                        <label for="fullName">Full Name</label>
+                                                        <input type="text" id="fullName" name="fullName"
+                                                            placeholder="Enter your full name" required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="email">Email Address</label>
+                                                        <input type="email" id="email" name="email"
+                                                            placeholder="Enter your email" required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="password">Password</label>
+                                                        <input type="password" id="password" name="password"
+                                                            placeholder="Create a password" required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="confirmPassword">Confirm Password</label>
+                                                        <input type="password" id="confirmPassword"
+                                                            name="confirmPassword" placeholder="Re-enter your password"
+                                                            required>
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-primary full-width">Create
+                                                        Account</button>
+                                                </form>
+
+                                                <div class="auth-switch">
+                                                    <p>Already have an account?</p>
+                                                    <a href="/login" class="btn btn-secondary">Go to Login</a>
+                                                </div>
+                            </div>
+
+                            <div class="content-panel">
+                                <h3>Developer Placeholders</h3>
+                                <p>
+                                    This page uses fake signup logic only, so you can style and reuse the template now.
+                                </p>
+
+                                <div class="placeholder-list">
+                                    <div class="placeholder-item">
+                                        <strong>Save user to database:</strong>
+                                        <span>app.post("/signup")</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>Password hashing:</strong>
+                                        <span>before saving the password</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>Database credentials:</strong>
+                                        <span>config/db.js</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>Session after signup:</strong>
+                                        <span>set req.session.user after insert</span>
+                                    </div>
+
+                                    <div class="placeholder-item">
+                                        <strong>Users table example:</strong>
+                                        <span>id, full_name, email, password</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <%- include("partials/footer") %>
+    </div>
+</body>
+
+</html>
